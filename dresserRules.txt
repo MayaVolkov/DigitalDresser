@@ -1,0 +1,94 @@
+DIGITALDRESSER RULES
+All temperatures are FEELS-LIKE (day.feelsHigh / day.feelsLow).
+"Hours out" = 7am-9pm. Evening = 8pm-midnight.
+"Cloudy" = Cloudy or Mostly Cloudy (Partly Cloudy / Mostly Sunny don't count).
+
+
+BASE OUTFIT
+Check top to bottom. The first one that matches wins.
+
+  A. High below 32
+     top:    Long sleeve + sweatshirt
+     outer:  Coat
+     bottom: Jeans or sweatpants
+     shoes:  Sneakers, boots, or clogs (no flip-flops)
+
+  B. Cloudy or rain 50%+, high 32-50
+     top:    Sweatset
+     bottom: (none, sweatset covers it)
+     shoes:  Birks or clogs (if rain 50%+: sneakers or boots)
+
+  C. Low 30-50, high up to 55
+     top:    T-shirt + zip-up
+     bottom: Jeans
+     shoes:  Sneakers or clogs
+
+  D. Low 50 or below, high 56-71 (warms up)
+     top:    Tank top or t-shirt
+     bottom: Jeans or leggings
+     shoes:  Sneakers
+     tip:    "Grab a zip-up for the morning"
+
+  E. Low above 50, high up to 71
+     top:    Short-sleeve top + zip-up
+     bottom: Jeans or leggings
+     shoes:  Sneakers or flip-flops
+
+  F. High 72-89
+     top:    T-shirt
+     bottom: Jeans
+     shoes:  Sneakers or flip-flops
+
+  G. High 90+
+     top:    Oversized t-shirt + shorts, OR a dress
+     shoes:  Flip-flops
+     if cloudy: shorts OR jeans
+
+   H. Low below 30, high 32-55
+     top:    Long sleeve + jacket, OR t-shirt + hoodie
+     bottom: Jeans, sweatpants, or leggings
+     shoes:  Sneakers, boots, or clogs (no flip-flops)
+
+
+
+ADJUSTMENTS (apply after the base outfit)
+
+  Rain 50%+ during hours out:
+     add umbrella (no rain jacket)
+     high below 60 -> shoes = Sneakers or boots (no clogs, Birks, or flip-flops)
+     high 60+      -> flip-flops become sneakers
+
+  Afternoon rain heads-up (3+ hours in a row over 50%):
+     tip: "Heads up, it might rain starting at {start} until {end},
+           if you're going to be out then grab an umbrella"
+
+  Snowing:
+     high 25 and up -> shoes = Sneakers or boots
+     high below 25  -> shoes = Boots, outer = Coat
+
+  Sunny: add sunglasses
+
+
+JACKET COUNT
+  Reasons for a jacket: windy (20+ mph), rain 50%+, cold (high below 50)
+     rain alone          -> umbrella only, no jacket
+     cold alone          -> no change (the base outfit already handles it)
+     windy alone         -> Jacket
+     any 2 or more       -> Coat
+
+
+TIME RULES
+
+  Workout (9-11am), using the 9am feels-like:
+     below 50 -> add sweatpants + sweatshirt for workout
+     50-70    -> add hoodie for workout
+
+  Going out (Thursday, Friday, Saturday):
+     if no evening hour feels above 50   -> add jacket to going-out outfit
+     (on these days the widget switches to tomorrow at 9pm instead of 7pm)
+
+  All tips show, not just one.
+
+
+SENTENCE
+  "Between {low} and {high} today, DigitalDresser recommendation is ..."
