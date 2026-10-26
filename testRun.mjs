@@ -26,6 +26,14 @@ const FAKE_DAY = {
   humidity: 40,
 };
 
+// Pretend Gym calendar: a start hour (e.g. 8 for an 8am workout), null for
+// no workout that day, or "error" to pretend the calendar can't be read.
+const FAKE_GYM = null;
+
+// tests.mjs passes its own scenario in through these.
+if (process.env.FAKE_DAY_JSON) Object.assign(FAKE_DAY, JSON.parse(process.env.FAKE_DAY_JSON));
+const fakeGym = process.env.FAKE_GYM_JSON ? JSON.parse(process.env.FAKE_GYM_JSON) : FAKE_GYM;
+
 // ---------- Test plumbing (no need to edit) ----------
 
 const [mode, size = "medium"] = process.argv[2] === "fake" ? ["fake", process.argv[3]] : ["live", process.argv[2]];
@@ -67,7 +75,7 @@ Object.assign(globalThis, {
   LinearGradient: class {},
   Color: class { static white() { return {}; } },
   Font: new Proxy({}, { get: () => () => ({}) }),
-  Location: { setAccuracyToThreeKilometers() {}, async current() { return { latitude: LIVE_LOCATION.lat, longitude: LIVE_LOCATION.lon }; } },
+  Location: { setAccuracyToThreeKilometers() {}, setAccuracyToHundredMeters() {}, async current() { return { latitude: LIVE_LOCATION.lat, longitude: LIVE_LOCATION.lon }; } },
   Timer: { schedule: (ms, repeat, fn) => setTimeout(fn, ms).unref() },
   FileManager: { local: () => ({
     cacheDirectory: () => cacheDir, joinPath: path.join, fileExists: fs.existsSync,
@@ -88,6 +96,19 @@ Object.assign(globalThis, {
       return res.json();
     }
   },
+  Calendar: {
+    async forEventsByTitle(title) {
+      if (fakeGym === "error") throw new Error("no calendar access");
+      return { title };
+    },
+  },
+  CalendarEvent: {
+    async between(start, end) {
+      if (fakeGym == null || fakeGym === "error") return [];
+      const at = new Date(start); at.setHours(fakeGym, 0, 0, 0);
+      return at < end ? [{ title: "Workout", isAllDay: false, startDate: at }] : [];
+    },
+  },
   args: { widgetParameter: null },
   config: { runsInWidget: true, widgetFamily: size },
   Script: { setWidget() {}, complete() {} },
@@ -100,6 +121,10 @@ const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor;
 await new AsyncFunction(src)();
 
 const day = globalThis.__day, outfit = globalThis.__outfit;
+if (process.argv.includes("--json")) {
+  console.log("@@JSON" + JSON.stringify({ day, outfit, lines }));
+  process.exit(0);
+}
 if (day) {
   const { rows, evening, ...summary } = day;
   console.log("\n=== day ===");

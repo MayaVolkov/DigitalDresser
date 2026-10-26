@@ -1,7 +1,8 @@
 DIGITALDRESSER RULES
 All temperatures are FEELS-LIKE (day.feelsHigh / day.feelsLow).
+Cloudy daytime hours count as up to 5° colder (at 100% cloud cover).
 "Hours out" = 7am-9pm. Evening = 8pm-midnight.
-"Cloudy" = Cloudy or Mostly Cloudy (Partly Cloudy / Mostly Sunny don't count).
+"Cloudy" = 60%+ cloud cover. "Overcast" = 70%+. "Sunny" = at least a third of daylight hours at 30% or less.
 
 
 BASE OUTFIT
@@ -18,16 +19,16 @@ Check top to bottom. The first one that matches wins.
      bottom: (none, sweatset covers it)
      shoes:  Birks or clogs (if rain 50%+: sneakers or boots)
 
-  C. Low 30-50, high up to 55
-     top:    T-shirt + zip-up
-     bottom: Jeans
-     shoes:  Sneakers or clogs
+  C. Low 30-50, high up to 55 (sweat set weather)
+     top:    Crewneck or hoodie
+     bottom: Sweatpants
+     shoes:  Sneakers
 
   D. Low 50 or below, high 56-71 (warms up)
      top:    Tank top or t-shirt
      bottom: Jeans or leggings
      shoes:  Sneakers
-     tip:    "Grab a zip-up for the morning"
+     tip:    "Grab a zip-up for the morning" (only if no morning Gym event)
 
   E. Low above 50, high up to 71
      top:    Short-sleeve top + zip-up
@@ -67,6 +68,7 @@ ADJUSTMENTS (apply after the base outfit)
      high below 25  -> shoes = Boots, outer = Coat
 
   Sunny: add sunglasses
+  Overcast: no flip-flops, and no sun emojis
 
 
 JACKET COUNT
@@ -79,7 +81,8 @@ JACKET COUNT
 
 TIME RULES
 
-  Workout (9-11am), using the 9am feels-like:
+  Workout: only on days with a "Gym" calendar event before 11am
+  (if the calendar can't be read: Monday, Tuesday, Wednesday). Uses the 9am feels-like:
      below 50 -> add sweatpants + sweatshirt for workout
      50-70    -> add hoodie for workout
 
